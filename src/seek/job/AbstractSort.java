@@ -1,5 +1,7 @@
 package seek.job;
 
+import java.util.Random;
+
 public abstract class AbstractSort {
 
     public abstract void sort(Comparable[] a);
@@ -27,5 +29,14 @@ public abstract class AbstractSort {
             }
         }
         return true;
+    }
+
+    public Integer[] createRandomIntegerArray(int num, int max) {
+        Random random = new Random();
+        Integer[] arr = new Integer[num];
+        for (int i=0; i<num; i++) {
+            arr[i] = random.nextInt(max);
+        }
+        return arr;
     }
 }
