@@ -1,11 +1,9 @@
 package seek.job.sort;
 
-import seek.job.AbstractSort;
-
 /**
  * Created by likoguan on 22/12/18.
  */
-public class InsertSort extends AbstractSort {
+public class InsertSort extends Template {
     @Override
     public void sort(Comparable[] a) {
         if (a == null || a.length == 0) {
@@ -34,9 +32,11 @@ public class InsertSort extends AbstractSort {
 
     public static void main(String[] args) {
         InsertSort insertSort = new InsertSort();
-        Integer[] arr = insertSort.createRandomIntegerArray(10, 100);
-        insertSort.show(arr);
+        Integer[] arr = insertSort.createRandomIntegerArray(10000, 10000);
+        //insertSort.show(arr);
+        long start = System.currentTimeMillis();
         insertSort.sort(arr);
-        insertSort.show(arr);
+        System.out.println(System.currentTimeMillis()-start);
+        //insertSort.show(arr);
     }
 }

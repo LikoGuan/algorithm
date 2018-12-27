@@ -1,13 +1,13 @@
-package seek.job;
+package seek.job.sort;
 
 import java.util.Random;
 
-public abstract class AbstractSort {
+public abstract class Template {
 
     public abstract void sort(Comparable[] a);
 
     protected boolean less(Comparable v, Comparable w) {
-        return v.compareTo(w) < 0;
+        return v.compareTo(w) <= 0;
     }
 
     protected void swap(Comparable[] a, int i, int j) {

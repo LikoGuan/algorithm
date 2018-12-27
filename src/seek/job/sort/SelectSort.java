@@ -1,11 +1,9 @@
 package seek.job.sort;
 
-import seek.job.AbstractSort;
-
 /**
  * Created by likoguan on 22/12/18.
  */
-public class SelectSort extends AbstractSort {
+public class SelectSort extends Template {
     @Override
     public void sort(Comparable[] a) {
         if (a == null || a.length == 0) {
@@ -27,8 +25,10 @@ public class SelectSort extends AbstractSort {
     public static void main(String[] args) {
         SelectSort selectSort = new SelectSort();
         Integer[] arr = selectSort.createRandomIntegerArray(10, 100);
-        selectSort.show(arr);
+//        selectSort.show(arr);
+        long start = System.currentTimeMillis();
         selectSort.sort(arr);
-        selectSort.show(arr);
+        System.out.println(System.currentTimeMillis()-start);
+//        selectSort.show(arr);
     }
 }
